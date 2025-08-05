@@ -1,4 +1,4 @@
-const CSV_PATH = "../data/vehicle_catalog.csv"; // load catalog file
+const CSV_PATH = "/vehicle_catalog.csv"; // load catalog file
 const STORAGE_KEY = "last_vehicle";             // Store last entered vehicle data {Year:"2015", Make:"RAM", Model:"1500"}
 
 // DOM Elements
