@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vehicle Parts Finder</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="../src/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js" defer></script>
+  <script src="../src/js/finder.js" defer></script>
+</head>
+<body>
+  <div class="widget" aria-label="Vehicle parts finder">
+    <div class="loading-overlay" id="overlay">Loading catalog...</div>
+
+    <h2>Find Parts</h2>
+
+    <div class="form-row">
+      <div class="field floating">
+        <div class="input-wrapper">
+          <input id="year-input" placeholder=" " autocomplete="off" />
+          <label for="year-input" class="floating-label">Year</label>
+          <div class="suggestions" id="year-sug" role="listbox" hidden></div>
+        </div>
+        <div class="error" id="err-year"></div>
+      </div>
+
+      <div class="field floating">
+        <div class="input-wrapper">
+          <input id="make-input" placeholder=" " autocomplete="off" disabled />
+          <label for="make-input" class="floating-label">Make</label>
+          <div class="suggestions" id="make-sug" role="listbox" hidden></div>
+        </div>
+        <div class="error" id="err-make"></div>
+      </div>
+
+      <div class="field floating">
+        <div class="input-wrapper">
+          <input id="model-input" placeholder=" " autocomplete="off" disabled />
+          <label for="model-input" class="floating-label">Model</label>
+          <div class="suggestions" id="model-sug" role="listbox" hidden></div>
+        </div>
+        <div class="error" id="err-model"></div>
+      </div>
+
+      <div class="field floating">
+        <div class="input-wrapper">
+          <input id="ptype-input" placeholder=" " autocomplete="off" disabled />
+          <label for="ptype-input" class="floating-label">Product Type</label>
+          <div class="suggestions" id="ptype-sug" role="listbox" hidden></div>
+        </div>
+        <div class="error" id="err-ptype"></div>
+      </div>
+
+      <div class="field action-field">
+        <label style="opacity:0; height:0; pointer-events:none;">Submit</label>
+        <button id="goBtn" disabled>Add Vehicle</button>
+        <div class="error" id="err-final" aria-live="polite"></div>
+      </div>
+    </div>
+
+    <div class="note">
+      Only valid and available makes/models/product types show based on selections. 
+    </div>
+  </div>
+</body>
+</html>
